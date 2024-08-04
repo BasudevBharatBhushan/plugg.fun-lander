@@ -11,7 +11,7 @@ import {
   WalletProvider,
 } from "@solana/wallet-adapter-react";
 import { clusterApiUrl } from "@solana/web3.js";
-import { PhantomWalletAdapter } from "@solana/wallet-adapter-wallets";
+import { PhantomWalletAdapter } from "@solana/wallet-adapter-phantom";
 import { postData } from "../helper";
 const WalletContext = createContext();
 
