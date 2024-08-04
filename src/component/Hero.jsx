@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { HeroImg, SolanaImg } from "../utils";
 import { useGSAP } from "@gsap/react";
+import Header from "./Header";
 import gsap from "gsap";
 
 const Hero = () => {
@@ -27,12 +28,13 @@ const Hero = () => {
 
     gsap.fromTo(
       ".hero-button",
-      { rotation: 180 },
+      { rotationZ: 180 },
       {
         delay: 1,
         duration: 0.5,
-        rotation: 360,
+        rotationZ: 360,
         ease: "power1.inOut",
+        transformOrigin: "center center",
       }
     );
 
@@ -49,13 +51,13 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="w-full max-w-[85vw] mx-auto h-auto rounded-md mt-3 font-Caveat relative overflow-hidden">
+    <div className=" w-[85vw] mx-auto h-auto rounded-md mt-3 font-Oswald relative overflow-hidden text-white pt-20">
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 xl:gap-x-5  justify-items-center xl:justify-items-stretch relative z-10 p-4">
         <div className="flex flex-col items-center xl:items-end justify-center order-2 xl:order-1 text-center xl:text-right">
           <h1 className="hero-header text-3xl lg:text-5xl xl:text-4xl font-extrabold mb-4">
-            Let your favorite influencer shill this for you
+            Let your favorite influencer <br /> shill this for you
           </h1>
-          <p className="hero-content font-bold text-lg lg:text-3xl xl:text-xl">
+          <p className="hero-content font-extralight text-lg lg:text-3xl xl:text-xl  ">
             Bid for an adspot on any influencer's socials. Just for 0.02 Sol
           </p>
         </div>
@@ -67,7 +69,7 @@ const Hero = () => {
           />
         </div>
         <div className="flex order-3 justify-center xl:justify-end items-center xl:items-start w-full">
-          <button className="hero-button bg-orange-500 hover:bg-blue-600 hover:scale-110 py-3 px-10 rounded-xl text-white text-xl transition ease-in-out">
+          <button className="hero-button bg-orange-500 hover:bg-blue-600 hover:scale-110 py-3 px-10 rounded-xl text-white text-xl">
             Connect Wallet
           </button>
         </div>

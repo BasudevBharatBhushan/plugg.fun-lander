@@ -4,6 +4,8 @@ import Hero from "./component/Hero";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SolanaImg } from "./utils";
+import MainContent from "./component/MainContent";
+import Footer from "./component/Footer";
 
 function App() {
   const solanaImagesRef = useRef([]);
@@ -24,9 +26,9 @@ function App() {
     });
   }, []);
   return (
-    <div className="flex flex-col justify-start items-center bg-gray-200 h-screen relative">
+    <div className="flex flex-col justify-start items-center bg-black h-auto relative overflow-x-hidden">
       {/* Floating Solana Images */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* <div className="absolute inset-0 pointer-events-none">
         {[...Array(8)].map((_, index) => (
           <img
             key={index}
@@ -40,9 +42,11 @@ function App() {
             }}
           />
         ))}
-      </div>
+      </div> */}
       <Header />
       <Hero />
+      <MainContent />
+      <Footer />
     </div>
   );
 }

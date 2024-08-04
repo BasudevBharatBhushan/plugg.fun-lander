@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         Caveat: ["Caveat", "cursive"],
+        Oswald: ["Oswald", "sans-serif"],
       },
     },
   },
