@@ -12,6 +12,7 @@ const MainContent = () => {
     gsap.from(".vector-image-1", {
       ease: "slow(0.7,0.7,false)",
       x: "-100%",
+      duration: 3,
       opacity: 0,
       scrollTrigger: {
         trigger: ".vector-image-1",
@@ -25,6 +26,8 @@ const MainContent = () => {
     gsap.from(".card-description-1", {
       ease: "slow(0.7,0.7,false)",
       x: "100%",
+      duration: 3,
+
       opacity: 0,
       scrollTrigger: {
         trigger: ".card-description-1",
@@ -39,6 +42,8 @@ const MainContent = () => {
     gsap.from(".vector-image-2", {
       ease: "slow(0.7,0.7,false)",
       x: "-100%",
+      duration: 3,
+
       opacity: 0,
       scrollTrigger: {
         trigger: ".vector-image-2",
@@ -52,6 +57,8 @@ const MainContent = () => {
     gsap.from(".card-description-2", {
       ease: "slow(0.7,0.7,false)",
       x: "100%",
+      duration: 3,
+
       opacity: 0,
       scrollTrigger: {
         trigger: ".card-description-2",
@@ -66,6 +73,8 @@ const MainContent = () => {
     gsap.from(".vector-image-3", {
       ease: "slow(0.7,0.7,false)",
       x: "-100%",
+      duration: 3,
+
       opacity: 0,
       scrollTrigger: {
         trigger: ".vector-image-3",
@@ -79,6 +88,8 @@ const MainContent = () => {
     gsap.from(".card-description-3", {
       ease: "slow(0.7,0.7,false)",
       x: "100%",
+      duration: 3,
+
       opacity: 0,
       scrollTrigger: {
         trigger: ".card-description-3",
