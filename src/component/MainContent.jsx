@@ -120,7 +120,7 @@ const MainContent = () => {
 
         {/* Step 2 */}
         <div className="p-10 lg:order-3 order-3 vector-image-2">
-          <img className="rounded-xl w-full" src={RewardVectorImg} alt="" />
+          <img className="rounded-xl w-full" src={BidVectorImg} alt="" />
         </div>
         <div className="lg:order-4 order-4 card-description-2">
           <p className="text-center lg:text-left text-2xl lg:text-3xl">
@@ -135,7 +135,7 @@ const MainContent = () => {
           </p>
         </div>
         <div className="p-10 lg:order-6 order-5 vector-image-3">
-          <img className="rounded-xl w-full" src={BidVectorImg} alt="" />
+          <img className="rounded-xl w-full" src={RewardVectorImg} alt="" />
         </div>
       </div>
     </div>
