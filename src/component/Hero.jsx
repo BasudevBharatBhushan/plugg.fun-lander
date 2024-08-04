@@ -1,11 +1,29 @@
-import React, { useRef } from "react";
-import { HeroImg, SolanaImg } from "../utils";
+import React, { useRef, useState, useEffect, useContext } from "react";
+import { HeroImg } from "../utils";
 import { useGSAP } from "@gsap/react";
 import Header from "./Header";
 import gsap from "gsap";
+import {
+  WalletModalProvider,
+  WalletMultiButton,
+  WalletDisconnectButton,
+} from "@solana/wallet-adapter-react-ui";
+
+import { useWalletContext } from "../context/WalletContext";
 
 const Hero = () => {
   const solanaImagesRef = useRef([]);
+
+  const {
+    connect,
+    disconnect,
+    connected,
+    publicKey,
+    setVisible,
+    walletId,
+    setWalletId,
+    connectWallet,
+  } = useWalletContext();
 
   useGSAP(() => {
     gsap.from(".hero-header", {
@@ -69,8 +87,11 @@ const Hero = () => {
           />
         </div>
         <div className="flex order-3 justify-center xl:justify-end items-center xl:items-start w-full">
-          <button className="hero-button bg-orange-500 hover:bg-blue-600 hover:scale-110 py-3 px-10 rounded-xl text-white text-xl">
-            Connect Wallet
+          <button
+            className="hero-button bg-orange-500 hover:bg-blue-600 hover:scale-110 py-3 px-10 rounded-xl text-white text-xl"
+            onClick={connectWallet}
+          >
+            {connected ? "Connected" : "Connect Wallet"}
           </button>
         </div>
       </div>
