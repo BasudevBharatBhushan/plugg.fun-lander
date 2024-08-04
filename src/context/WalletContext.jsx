@@ -12,7 +12,7 @@ import {
 } from "@solana/wallet-adapter-react";
 import { clusterApiUrl } from "@solana/web3.js";
 import { PhantomWalletAdapter } from "@solana/wallet-adapter-wallets";
-
+import { postData } from "../helper";
 const WalletContext = createContext();
 
 export const useWalletContext = () => useContext(WalletContext);
@@ -56,11 +56,26 @@ const InnerWalletProvider = ({ children }) => {
   const [walletId, setWalletId] = useState(null);
 
   useEffect(() => {
-    if (wallet.connected && wallet.publicKey) {
-      setWalletId(wallet.publicKey.toBase58());
-    } else {
-      setWalletId(null);
-    }
+    const fetchData = async () => {
+      if (wallet.connected && wallet.publicKey) {
+        setWalletId(wallet.publicKey.toBase58());
+
+        const data = {
+          walletId: {
+            stringValue: wallet.publicKey.toBase58(),
+          },
+          buttonClickedOn: {
+            timestampValue: new Date().toISOString(),
+          },
+        };
+
+        await postData(data);
+      } else {
+        setWalletId(null);
+      }
+    };
+
+    fetchData();
   }, [wallet.connected, wallet.publicKey]);
 
   const connectWallet = async () => {
